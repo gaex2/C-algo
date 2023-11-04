@@ -2,4 +2,4 @@ tipi primitivi:
     int -> 4 bytes (32 bit): tipicamente rappresentati con complemento a due,
     dominio che va da -2^31 a 2^31 - 1
 
-    
+    9.34 min
