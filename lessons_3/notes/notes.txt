@@ -1,0 +1,13 @@
+Da un punto di vista quasi "circuitale" un ciclo in qualsiasi linguaggio di programmazione
+interagisce con il microprocessore (seguendo architettura di von neumann) aggiornando il
+registro che tiene traccia della posizione all'interno del programma a cui è arrivata l'esecuzione.
+Questo è un indirizzo che è salvato in un registro chiamato Program Counter, se viene
+sovrascritto questo registro, il programma continua l'esecuzione facendo un "salto" 
+all'istruzione che è contenuta nell'indirizzo che è presente nel program counter.
+
+In C le condizioni sono:
+    - true -> qualsiasi valore diverso da 0
+    - false -> valore uguale a 0
+
+
+E' sempre meglio indicare in un ciclo la condizione di uscita  nell'argomento piuttosto che interromperlo all'interno

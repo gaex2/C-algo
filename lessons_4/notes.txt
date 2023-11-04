@@ -1,0 +1,9 @@
+Due programmi si dicono equivalenti se, sottoposti agli stessi dati in ingresso:
+    - entrambi non terminano, oppure
+    - entrambi terminano producendo gli stessi risultati in uscita
+
+Un insieme di istruzioni di controllo del flusso si dice completo se per ogni programma
+nel linguaggio ne essite uno equivalente scritto solo con le strutture di controllo contenute
+nell'insieme.
+
+La sequenza, l'if else e while formano un insieme di istruzioni completo
