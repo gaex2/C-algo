@@ -1,3 +1,5 @@
+26/02
+
 Da un punto di vista quasi "circuitale" un ciclo in qualsiasi linguaggio di programmazione
 interagisce con il microprocessore (seguendo architettura di von neumann) aggiornando il
 registro che tiene traccia della posizione all'interno del programma a cui è arrivata l'esecuzione.
