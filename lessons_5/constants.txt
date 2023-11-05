@@ -1,0 +1,27 @@
+
+Definizione di costanti:
+
+    const int COMPENSO_ORARIO = 20;
+
+    In questo caso il compilatore controlla che la variabile COMPENSO_ORARIO
+    non cambi mai il suo valore, tramite delle operazioni o nuove
+    assegnazioni
+
+
+Direttive:
+    associa a una stringa un'altra stringa.
+
+    #define COMPENSO_ORARIO 20
+
+    Il precompilatore durante un processo chiamato "macro-espansione" sostituisce
+    ad ogni occorrenza di COMPENSO_ORARIO il letterale 20
+    Non viene effettuato nessun controllo sui tipi, c'è solo una sostituzione 
+    di letterali.
+
+In C le assegnazioni sono trattate come espressioni, il valore di ritorno di un'assegnazione
+è uguale al valore che sto assegnando alla variabile. Esempio assegnazioni.c
+
+Il C fornisce due primitive per leggere caratteri da tastiera:
+
+    char c = getchar();    // restituisce un valore di tipo int equivalente al numero associato al carattere ASCII
+    putchar(c);
