@@ -1,0 +1,9 @@
+
+10/03
+
+Quando viene letto un input, il contenuto è salvato in un buffer di memoria.
+
+Tipicamente la funzione "flush" pulisce il buffer da letture precedenti.
+
+24.30
+

@@ -42,6 +42,27 @@ Analogamente alle altre dichiarazioni di variabili, la dichiarazione senza asseg
 non predicibili quando viene utilizzata la variabile senza inizializzarla.
 
 
-54.40
+l'operatore *(argomento) usato non durante una dichiarazione può trovarsi a destra o sinistra di un'assegnazione.
+In entrambi i casi il suo utilizzo serve a prendere in considerazione la locazione di memoria con indirizzo
+equivalente al valore della variabile puntatore. quindi
+
+    - A destra di un'assegnazione si considera il valore all'interno della locazione di memoria corrispondente
+      all'indirizzo salvato nel puntatore.
+    - A sinistra di un'assegnazione, assegna il valore a destra alla locazione di memoria puntata dall'indirizzo
+        salvato nella variabile puntatore argomento di *
+
+Ovviamente puntatori diversi possono fare riferimento alla stessa locazione di memoria
+
+- Operatore " + " su variabile di tipo puntatore.
+
+E' fondamentale il tipo di variabile a cui punta il puntatore, poichè nella somma, il valore sommato al puntatore
+si moltiplica per i byte necessari per salvare in memoria la variabile a cui il puntatore punta:
+
+    int a = 5;
+    int* p = &a;
+    int* q = p + 2;     // indirizzo di p + 2 * sizeof(int) poichè a è un int
+
+la variabile puntatore q allora conterrà l'indirizzo della cella di memoria che sta 8 posizioni dopo quella
+a cui stiamo sommando
 
 
