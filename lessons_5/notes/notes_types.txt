@@ -1,0 +1,52 @@
+tipi primitivi:
+    int -> 4 bytes (32 bit): tipicamente rappresentati con complemento a due,
+    dominio che va da -2^31 a 2^31 - 1
+
+facendo l'include di limits.h si hanno le costanti INT_MIN e INT_MAX che sono i valori limite
+per i numeri interi.
+
+    short (int) -> 2 bytes (16 bit) 
+    dominio che va da -2^15 a 2^15 - 1
+
+    long (int) -> 8 bytes (64 bit)
+    dominio che va da -2^63 a 2^63 - 1
+    Per scrivere i long si mette una L alla fine ->   long a = 90L
+
+    unsigned int -> 4 byte (32 bit)
+    dominio che va da 0 a 2^32 -1 
+
+    float -> 4 byte (32 bit)
+    rappresentazione con esponente e mantissa (virgola mobile)
+    dominio che va da 1.4 * 10^-38 a 3.4 * 10^38
+    Per scrivere i float si usa una "f" finale -> 3.14f,
+    oppure in notazione scientifica -> float pi = 314E-2f
+
+    double -> 8byte (64 bit)
+    rappresentazione uguale ai float
+    dominio che va da 1.79 * 10^-308 a 2.25 * 10^308
+    Possono essere rappresentati con una d finale come nel caso dei float
+    Nel caso di precisione maggiore può essere usato il long double
+    La notazione in virgola mobile introduce delle approssimazioni larghe soprattutto per numeri molto grandi
+    e numeri molto piccoli. Esempio in approssimazione.c
+
+
+    char -> 1 byte (8 bit)
+    contiene un carattere alfanumerico o simbolo. Il dominio è costituito
+    dai aratteri dello standard ASCII, che contiene 128 caratteri. Lo standard ASCII stabilisce una corrispondenza
+    tra numeri e simboli
+    In C i tipi char e int sono intercambiabili: se definisco un char e lo leggo come int, quello è interpretato come
+    il numero corrispondente al carattere, e viceversa. Esempio caratteri.c
+
+    bool -> presente in stdbool.h , si definisce con valori letterari:
+        true, false;
+
+    complex -> presente in complex.h, serve per rappresentare numeri complessi. Si definiscono come segue:
+        1+2*I
+
+
+
+
+OVERFLOW
+nel fare i conti con i numeri bisogna stare attenti ai limiti rappresentabili poichè
+il compilatore non avverte di questa evenienza ne di quando viene sforata
+

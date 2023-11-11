@@ -1,0 +1,47 @@
+5/03
+
+
+In C ogni byte è associato ad una locazione di memoria, e ogni locazione
+di memoria ha un suo indirizzo di 32 bit.
+
+Questo indirizzo è rappresentato in notazione esadecimale:
+
+    indirizzo   |   contenuto
+    0xF0000000      00100010
+    0xF0000001  |   00110001
+        ...           ...   
+
+
+la parte 0x serve a indicare che il resto è in esadecimale.
+
+In generale quello che interessa non è il valore assoluto di un indirizzo,
+ma la sua posizione relativa rispetto ad un altro indirizzo di riferimento,
+
+quindi non capita di lavorare con i valori contenuti nelle variabili di indirizzo,
+ma piuttosto con le variabili che contengono questi valori senza entrare nello
+specifico dei valori contenuti.
+
+Rappresentazioni:
+
+ pt_i | 100 |     i (100) | contenuto di i |
+
+ pt_i |_____| ----> i |______|
+
+Ci basta sapere che pt_i contiene l'indirizzo di i, ma non quale sia nello specifico 
+questo indirizzo.
+
+Grazie all'operatore "&" prima di una variabile, viene restituita il valore dell'indirizzo
+di quella variabile.
+
+La sintassi di definizione di una variabile di tipo puntatore:
+    
+    [Tipo della variabile] *[nome puntatore];
+    int *p1;
+
+Analogamente alle altre dichiarazioni di variabili, la dichiarazione senza assegnazione da risultati
+non predicibili quando viene utilizzata la variabile senza inizializzarla.
+
+
+54.40
+
+

@@ -1,0 +1,34 @@
+5/03
+
+Nel caso di errori di overflow, non ci sono errori specifici ma il valore viene mal letto.
+Catena casting:
+
+    float -> double -> long double
+
+Il cast è sempre permesso da un sottoinsieme ad un insieme che lo contiene senza perdita
+di informazione
+
+Quando si fanno somme di tipi diversi si ottengono risultati inaspettati:
+     char + char = int 
+     short + short = int
+     short + char = int
+
+Questo perchè la somma a livello circuitale è gestita al minimo con 4 byte
+
+Nel caso in cui si voglia  effettuare una conversione da un tipo in virgola mobile ad uno intero,
+viene troncata la parte decimale:
+
+    double d = 102.945;
+    long int i = d; // i vale 102, non si fa approssimazione
+
+
+CASTING 
+
+L'operatore di cast ha precedenza più alta rispetto agli altri operatori aritmetici.
+Di base il cast viene fatto implicitamente dove serve, l'operatore serve a rendere leggibile
+e esplicita questa operazione
+
+OPERATORE sizeof
+
+Operatore predefinito che ritorna la size di un tipo o una variabile. L'unità di memoria che si
+considera è il byte.
