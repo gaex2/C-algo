@@ -5,5 +5,62 @@ Quando viene letto un input, il contenuto è salvato in un buffer di memoria.
 
 Tipicamente la funzione "flush" pulisce il buffer da letture precedenti.
 
-24.30
+______________________________________________________________________________
+
+E' possibile usare la parola chiave const anche nella definizione dei puntatori,
+definisce costante la locazione puntata -> il puntatore può cambiare valore, ma 
+la locazione puntata no.
+
+Puntatore a puntatore.
+
+E' possibile definire variabili di tipo puntatore a puntatore. Questi andranno a puntatore
+una locazione che contiene un indirizzo di memoria.
+
+Le variabili di tipo puntatore possono assumere il valore speciale NULL, questo specifica 
+che la variabile non punta ad alcuna locazione di memoria valida.
+Il confronto con NULL può essere usato per verificare se una variabile di tipo puntatore punta
+ad una locazione di memoria valida o meno.
+
+Vale la pena inizializzare i puntatori a NULL.
+
+Durante la dichiarazione di un puntatore, si può dichiarare un puntatore di tipo *void, poichè
+la dimensione della memoria allocata per tutti i puntatori è fissa.
+
+Un puntatore di tipo *void  è un puntatore generico, e può contenere un qualsiasi tipo di indirizzo
+Esempio:
+    
+    void* genericPoint = NULL;
+    int a = 10;
+    genericPoint = &a;
+
+In questo caso però il contenuto della locazione puntata da un puntatore void* non può essere assegnato
+direttamente ad un'altra variabile (Di qualsiasi tipo):
+
+    void* pt = NULL;
+    int a = 10;
+    pt = &a;
+
+    int j = *pt; // ERRORE
+
+E' necessario prima eseguire una conversione, che può essere automatica o esplicita:
+
+
+    void* pt = NULL;
+    ...
+
+    // conversione automatica
+    int* pti = pt
+
+    // conversione esplicita
+    int* pti2 = (int*) pt;
+
+    // ora è possibile assegnare il contenuto della locazione puntata ad una variabile
+    int j = *pti2;
+
+
+
+
+
+
+
 
