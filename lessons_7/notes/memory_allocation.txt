@@ -1,0 +1,84 @@
+10/03
+
+ALLOCAZIONE STATICA DI MEMORIA
+
+.Statica
+
+Ogni volta che c'è una dichiarazione di variabile nel programma,
+questa è una richiesta di allocazione di memoria, e poichè viene 
+definita prima dell'esecuzione del programma, questa allocazione
+viene detta STATICA. Se l'allocazione statica è l'unica usata in un
+programma, allora io posso dire solo guardando il codice quanta 
+memoria sarà richiesta dal programma.
+
+
+.Dinamica
+La memoria è richiesta durante l'esecuzione del programma, e non
+è possibile predirre a priori quanto sarà la richiesta di 
+memoria che il programma farà durante la sua esecuzione. questo
+può essere saputo solo a runtime
+
+
+Essendo due tipologie di richiesta di memoria diverse fra loro, le zone di memoria
+da cui viene assegnata la memoria al programma sono differenti nel caso in cui 
+a chiedere memoria sia un'allocazione statica o dinamica:
+
+- Stack -> allocazione statica di memoria
+- Heap -> allocazione dinamica di memoria
+
+
+MALLOC FUNCTION
+Funzione che sta nella libreria standard lib ( <stdlib.h)
+Per chiedere memoria dinamicamente al programma si usa una funzione nativa di C :
+
+malloc ( Memory ALLOCation)
+
+    void* malloc(int n);
+
+n è la dimensione in byte contigui di memoria che vogliamo che siano allocati,
+restituisce un puntatore di tipo void*, contenente l'indirizzo della prima cella allocata.
+
+E' importante notare che i byte allocati da malloc, sono allocati in sequenza, e questo è
+garantito dal linguaggio.
+
+L'utilizzo di malloc non da nessuna informazione sulla zona di memoria dell'heap dove viene 
+allocata la memoria.
+
+GARBAGE_COLLECTION:
+
+in tutti i linguaggi in cui viene utilizzata l'allocazione dinamica di memoria, bisogna
+considerare che ad un certo punto della vita del programma, la memoria allocata non serva più.
+Quindi quella memoria non può essere utilizzato quello spazio di memoria, ma allo stesso tempo 
+non è utilizzata.
+
+Allora il garbage collector si occupa di identificare le aree di memoria allocate dal programmatore
+per le quali non sia disponibile un riferimento ( puntatore) all'interno del programma.
+Tale meccanismo viene usato in JAva o python.
+
+In C questo meccanismo non è disponibile, ma deve essere fatta una deallocazione esplicita tramite
+una funzione che il programmatore deve usare.
+
+DEALLOCAZIONE
+
+funzione che esegue la deallocazione esplicita di una zona di memoria che è stata precedentemente
+allocata tramite la funzione malloc.
+
+    void free(void* p)
+
+Quel void* indica che l'argomento può essere un puntatore di qualsiasi tipo.
+
+l'argomento è il puntatore restituito dalla funzione malloc durante l'allocazione di quel blocco
+di memoria.
+
+Quando una zona di memoria è rilasciata, essa è disponibile per essere utilizzata per nuove richieste
+di memoria.
+Nonostante ciò, nel programma il puntatore a quella memoria rilasciata rimane comunque disponibile,
+quindi un uso successivo nel programma potrebbe creare problemi, poichè quella zona di memoria
+potrebbe essere usata dal compilatore in nuove allocazioni.
+
+
+
+
+
+
+

@@ -1,0 +1,19 @@
+10/03
+
+TEMPO DI VITA DI UNA VARIABILE ALLOCATA dinamicamente
+
+
+per le variabili allocate staticamente,
+solitamente il ciclo di vita di una variabile è esattamente il tempo
+di esecuzione dello scope (blocco).
+
+Tempo di vita e campo di azione sono due concetti diversi.
+
+
+Per le variabili dinamiche, l'unico modo per non avere a disposizione
+memoria allocata dinamicamente, è attraveso il suo esplicito rilascio.
+Se questo non avviene, la memoria rimane allocata per tutta l'esecuzione
+del programma.
+
+Questo non c'entra poi con l'accessiblità della stessa, che non incide 
+sul suo tempo di vita.
